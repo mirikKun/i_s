@@ -21,12 +21,10 @@ export default function Home() {
     }, [search])
     return (
         <>
-            <Header />
             <div className="home">
                 <Posts posts={posts}></Posts>
                 <Sidebar></Sidebar>
             </div>
-            <Footer />
 
         </>
     )

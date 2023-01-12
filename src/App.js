@@ -14,12 +14,14 @@ import Register from "./pages/register/Register";
 import Settings from "./pages/settings/Settings";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const { user } = useContext(Context);
   return (
     <Router>
-      <TopBar />
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/register' element={user ? <Home /> : <Register />} />
@@ -28,6 +30,7 @@ function App() {
         <Route path='/write' element={user ? <Write /> : <Register />} />
         <Route path='/post/:postId' element={<Single />} />
       </Routes>
+     <Footer/>
     </Router>
   );
 }
