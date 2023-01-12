@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Generics | Store</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="nav main-nav">
+            <ul>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn ">Вхід або регістрація</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="accountChange.html">Мій профіль</a>
+                        <a href="appointment.html">Мої прийоми</a>
+                        <a href="favorite-specialists.html">Вибрані терапевти</a>
+                        <a href="registration.html">Вийти</a>
+
+                    </div>
+                </div>
+                <li><a href="about.html">Головна</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="specialists.html">Знайти терапевта</a></li>
+                <li><a href="about.html">Терапевтам</a></li>
+                <li><a href="support.html">Підтримати проект</a></li>
+                <li><a href="aboutUs.html">Про нас</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="container content-section">
+
+        <h1 class="section-header">Записатись на прийом</h1>
+
+        <div class="shop-items">
+
+
+            <div class="spesialist-appointment">
+                <div class="spesialist-details">
+                    <img class="spesialist-appointment-image" src="Images/specialist.png">
+                    <div class="blog-item-details">
+                        <span class="spesialist-title">Психотерапія: напрямки, види, методи</span>
+                        <span class="spesialist-short">Дізнайтеся, які бувають напрямки, види та методи психотерапії та
+                            оберіть свої</span>
+                    </div>
+                    <div class="spesialist-choose-btn">
+                        <button class="spesialists-filter-btn">Записатись на прийом</button>
+                        <img class="spesialist-like" src="Images/like.png">
+
+                    </div>
+
+                </div>
+                <h1 class="section-header">26.12.2022-01.01.2023</h1>
+
+                <div class="spesialist-details">
+                    <div class="appointment-day">
+                        <p class="day-header">26.12.2022</p>
+                        <p class="day-time">14:00</p>
+                    </div>
+                    <div class="appointment-day">
+                        <p class="day-header">26.12.2022</p>
+                        <p class="day-time">14:00</p>
+                        <p class="day-time">15:00</p>
+                    </div>
+                    <div class="appointment-day">
+                        <p class="day-header">26.12.2022</p>
+                        <p class="day-time">14:00</p>
+                        <p class="day-time">15:00</p>
+                    </div>
+                    <div class="appointment-day">
+                        <p class="day-header">26.12.2022</p>
+                   
+                    </div>
+                    <div class="appointment-day">
+                        <p class="day-header">26.12.2022</p>
+                        <p class="day-time">15:00</p>
+                    </div>
+                    <div class="appointment-day">
+                        <p class="day-header">26.12.2022</p>
+                        <p class="day-time">14:00</p>
+                        <p class="day-time">15:00</p>
+                    </div>
+                    <div class="appointment-day">
+                        <p class="day-header">26.12.2022</p>
+                        <p class="day-time">15:00</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <div>
+                <ul>
+                    <p class="footer-info-text">Контакти:</p>
+                    <p class="footer-info-text">Тел. +38 (096) 123-45-67</p>
+                    <p class="footer-info-text">Ел. пошта : psyhelp@gmail.com</p>
+                    <p class="footer-info-text">Вул. Польова, 73, м. Київ, 02000</p>
+
+                </ul>
+            </div>
+            <ul class="nav footer-nav">
+                <li>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="Images/YouTube Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.spotify.com" target="_blank">
+                        <img src="Images/Spotify Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="Images/Facebook Logo.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

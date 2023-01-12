@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Generics | About</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="nav main-nav">
+            <ul>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn ">Вхід або регістрація</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="accountChange.html">Мій профіль</a>
+                        <a href="appointment.html">Мої прийоми</a>
+                        <a href="favorite-specialists.html">Вибрані терапевти</a>
+                        <a href="registration.html">Вийти</a>
+
+                    </div>
+                </div>
+                <li><a href="about.html">Головна</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="specialists.html">Знайти терапевта</a></li>
+                <li><a href="about.html">Терапевтам</a></li>
+                <li><a href="support.html">Підтримати проект</a></li>
+                <li><a href="aboutUs.html">Про нас</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="content-section container">
+        <div>
+
+            <img class="fist-about-image" src="Images/Sun.png">
+            <p class="section-header">Не терпіть!</p>
+            <p class="section-header">Зверніться по допомогу вже сьогодні!</p>
+            <p class="section-header">Знайдіть терапевта, який вас розуміє.</p>
+
+        </div>
+        <div>
+            <img class="second-about-image" src="Images/Sun.png">
+            <p>Клінічними симптомами ПТСР є:</p>
+            <ul>
+                <li>тривожно-фобічні стани;</li>
+                <li>постійні занурення в події минулого;</li>
+                <li>нав'язливі спогади;</li>
+                <li>порушення пам'яті та розлади сну; </li>
+                <li>апатія, небажання жити;</li>
+                <li>відчуття напруги та тривоги;</li>
+                <li>асоціальна поведінка;</li>
+                <li>будь-які ознаки виснаження ЦНС.</li>
+            </ul>
+            <p>Якщо ви страждаєте від будь-якого з цих симптомів, зверніться по психологічну допомогу.</p>
+            <p class="middle-text">Питання та відповіді.</p>
+            <ul>
+                <p>Як записатись на прийом?</p>
+                <p>Як обрати спеціаліста?</p>
+                <p>Як відбувається перша сесія?</p>
+
+            </ul>
+        </div>
+
+    </section>
+
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <div>
+                <ul>
+                    <p class="footer-info-text">Контакти:</p>
+                    <p class="footer-info-text">Тел. +38 (096) 123-45-67</p>
+                    <p class="footer-info-text">Ел. пошта : psyhelp@gmail.com</p>
+                    <p class="footer-info-text">Вул. Польова, 73, м. Київ, 02000</p>
+
+                </ul>
+            </div>
+            <ul class="nav footer-nav">
+                <li>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="Images/YouTube Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.spotify.com" target="_blank">
+                        <img src="Images/Spotify Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="Images/Facebook Logo.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

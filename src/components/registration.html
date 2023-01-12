@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Generics | Store</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="nav main-nav">
+            <ul>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn ">Вхід або регістрація</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="accountChange.html">Мій профіль</a>
+                        <a href="appointment.html">Мої прийоми</a>
+                        <a href="favorite-specialists.html">Вибрані терапевти</a>
+                        <a href="registration.html">Вийти</a>
+
+                    </div>
+                </div>
+                <li><a href="about.html">Головна</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="specialists.html">Знайти терапевта</a></li>
+                <li><a href="about.html">Терапевтам</a></li>
+                <li><a href="support.html">Підтримати проект</a></li>
+                <li><a href="aboutUs.html">Про нас</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="container content-section">
+        
+        <div class="registraition-panel">
+            <h1>Реєстрація</h1>
+            <p>Будь-ласка зоповніть цю форми щоб створити аккаунт.</p>
+            <hr>
+            <p>Виберіть одну із опцій.</p>
+
+            <label class="toggle">
+                <input class="toggle-checkbox" type="checkbox">
+                <div class="toggle-switch"></div>
+                <span class="toggle-label">Я хочу отримати психологічну допомогу</span>
+            </label>
+            <label class="toggle">
+                <input class="toggle-checkbox" type="checkbox">
+                <div class="toggle-switch"></div>
+                <span class="toggle-label">Я терапевт і хочу надавати психологічну допомогу на волонтерській основі</span>
+            </label>
+              <hr>
+
+            <label for="name"><b>ПІБ:</b></label>
+            <input type="text" placeholder="Прізвище, ім'я, по батькові" name="name" id="name" required>
+
+            <label for="phone-number"><b>Номер телефону:</b></label>
+            <input type="text" placeholder="Номер телефону" name="phone-number" id="phone-number" required>
+
+            <label for="email"><b>Електронна пошта</b></label>
+            <input type="text" placeholder="Електронна пошта" name="email" id="email" required>
+        
+            <label for="psw"><b>Введіть пароль</b></label>
+            <input type="password" placeholder="Введіть пароль" name="psw" id="psw" required>
+        
+            <label for="psw-repeat"><b>Повторіть пароль</b></label>
+            <input type="password" placeholder="Повторіть пароль" name="psw-repeat" id="psw-repeat" required>
+            <hr>
+        
+            <p>Створюючи аккаунт ви погоджуєтесь з  <a href="#">умовами та конфіденційністю</a>.</p>
+            
+            <button type="submit" class="registerbtn">Зареєструватися</button>
+          </div>
+        
+          <div class="container signin">
+            <p>Вже є аккаунт? <a href="login.html">Увійти</a>.</p>
+          </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <div>
+                <ul>
+                    <p class="footer-info-text">Контакти:</p>
+                    <p class="footer-info-text">Тел. +38 (096) 123-45-67</p>
+                    <p class="footer-info-text">Ел. пошта : psyhelp@gmail.com</p>
+                    <p class="footer-info-text">Вул. Польова, 73, м. Київ, 02000</p>
+
+                </ul>
+            </div>
+            <ul class="nav footer-nav">
+                <li>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="Images/YouTube Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.spotify.com" target="_blank">
+                        <img src="Images/Spotify Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="Images/Facebook Logo.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
