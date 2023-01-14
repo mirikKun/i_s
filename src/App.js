@@ -24,7 +24,8 @@ import AppointmentsBoard from "./pages/appointmentsBoard/AppointmentsBoard";
 import Appointments from "./pages/appointments/Appointments";
 import Profile from "./pages/profile/Profile";
 import CreateAppointment from "./pages/createAppointment/CreateAppointment";
-
+import axios from "axios";
+axios.defaults.baseURL = 'http://backend:8080';
 function App() {
     const {user} = useContext(Context);
     return (
