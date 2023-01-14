@@ -271,7 +271,7 @@ body {
     font-size: 1.1em;
 
     text-align: center;
-    color: #75663e;
+    color: #333333;
     border-radius: 25px;
     border: 4px solid #75663e;
     width: max-content;
@@ -279,6 +279,19 @@ body {
     padding-right: 23px;
 
     height: 40px;
+}
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
 }
 
 .spesialist {
@@ -428,8 +441,6 @@ body {
 }
 
 
-
-
 /* Full-width input fields */
 input[type=text],
 input[type=password] {
@@ -522,11 +533,11 @@ a {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
 }
 
-.toggle-checkbox:checked+.toggle-switch {
+.toggle-checkbox:checked + .toggle-switch {
     background: #75663e;
 }
 
-.toggle-checkbox:checked+.toggle-switch:before {
+.toggle-checkbox:checked + .toggle-switch:before {
     left: 30px;
 }
 

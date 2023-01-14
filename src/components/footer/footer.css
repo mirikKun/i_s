@@ -5,7 +5,9 @@
     color: white;
     padding: .25em 0;
     margin-top: 50px;
-
+    width: 100%;
+    position: relative;
+    bottom: 10px;
 }
 
 .main-footer-container {
@@ -27,6 +29,14 @@
 .footer-nav img {
     width: 30px;
     height: 30px;
+}
+
+.footer-info-text {
+    text-align: left;
+    color: white;
+    font-size: 0.9em;
+    margin: 4px;
+
 }
 
 .nav a:hover {

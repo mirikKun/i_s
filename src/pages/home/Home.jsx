@@ -1,31 +1,38 @@
 import "./home.css"
-import Header from "../../components/header/Header"
-import Footer from "../../components/footer/Footer"
-
-import Posts from "../../components/posts/Posts"
-import Sidebar from "../../components/sidebar/Sidebar"
-import { useEffect, useState } from "react"
-import axios from "axios"
-import { useLocation } from "react-router-dom"
+import Sun from './images/sun.png';
 
 export default function Home() {
-    const [posts, setPosts] = useState([])
-    const { search } = useLocation();
-
-    useEffect(() => {
-        const fetchPosts = async () => {
-            const res = await axios.get("/posts" + search);
-            setPosts(res.data)
-        }
-        fetchPosts()
-    }, [search])
     return (
         <>
-            <div className="home">
-                <Posts posts={posts}></Posts>
-                <Sidebar></Sidebar>
-            </div>
-
+            <section className="content-section container">
+                <div>
+                    <img className="fist-about-image" src={Sun}/>
+                        <p className="section-header">Не терпіть!</p>
+                        <p className="section-header">Зверніться по допомогу вже сьогодні!</p>
+                        <p className="section-header">Знайдіть терапевта, який вас розуміє.</p>
+                </div>
+                <div>
+                    <img className="second-about-image" src={Sun}/>
+                        <p>Клінічними симптомами ПТСР є:</p>
+                        <ul>
+                            <li>тривожно-фобічні стани;</li>
+                            <li>постійні занурення в події минулого;</li>
+                            <li>нав'язливі спогади;</li>
+                            <li>порушення пам'яті та розлади сну;</li>
+                            <li>апатія, небажання жити;</li>
+                            <li>відчуття напруги та тривоги;</li>
+                            <li>асоціальна поведінка;</li>
+                            <li>будь-які ознаки виснаження ЦНС.</li>
+                        </ul>
+                        <p>Якщо ви страждаєте від будь-якого з цих симптомів, зверніться по психологічну допомогу.</p>
+                        <p className="middle-text">Питання та відповіді.</p>
+                        <ul>
+                            <p>Як записатись на прийом?</p>
+                            <p>Як обрати спеціаліста?</p>
+                            <p>Як відбувається перша сесія?</p>
+                        </ul>
+                </div>
+            </section>
         </>
     )
 }

@@ -1,49 +1,57 @@
 import "./topbar.css"
-import { Link } from "react-router-dom"
-import { Context } from "../../context/Context";
-import { useContext } from "react";
+import {Link, useLocation} from "react-router-dom"
+import {Context} from "../../context/Context";
+import {useContext, useEffect, useState} from "react";
+import axios from "axios";
 
 export default function TopBar() {
-    const { user, dispatch } = useContext(Context);
+    const {user, dispatch} = useContext(Context);
 
     const handleLogout = () => {
-        dispatch({ type: "LOGOUT" });
+        dispatch({type: "LOGOUT"});
     };
 
-    return (
-        <div className="top">
-            <div className="topLeft">
-                <i className="topIcon fab fa-instagram-square"></i>
-                <i className="topIcon fab fa-facebook-square"></i>
-                <i className="topIcon fab fa-twitter-square"></i>
-                <i className="topIcon fab fa-pinterest-square"></i>
-            </div>
-            <div className="topCenter">
-                <ul className="topList">
-                    <li className="topListItem"><Link className="link" to="/">HOME</Link></li>
-                    <li className="topListItem"><Link className="link" to="/">ABOUT</Link></li>
-                    <li className="topListItem"><Link className="link" to="/">CONTACT</Link></li>
-                    <li className="topListItem"><Link className="link" to="/write">WRITE</Link></li>
-                    <li className="topListItem" onClick={handleLogout}>{user && "LOGOUT"}</li>
-                </ul>
-            </div>
-            <div className="topRight">
-                {
-                    user ? (
-                        <img
-                            className="topImg"
-                            src={user.profilePicture}
-                            alt=""
-                        />
-                    ) : (
-                        <ul className="topList">
-                            <li className="topListItem"><Link className="link" to="/login">LOGIN</Link></li>
-                            <li className="topListItem"><Link className="link" to="/register">REGISTER</Link></li>
-                        </ul>
-                    )
+    const [profile, setProfile] = useState([])
+    const {search} = useLocation();
+
+    useEffect(() => {
+        const fetchAppointments = async () => {
+            const res = await axios.get("/profile/" + search, {
+                headers: {
+                    'Authorization': 'Bearer ' + user.token
                 }
-                <i className="topSearchIcon fas fa-search"></i>
+            });
+            setProfile(res.data)
+        }
+        fetchAppointments()
+    }, [search])
+
+
+    return (
+        <header className="main-header">
+            <div className="nav main-nav">
+                <ul>
+                    <li><Link to="/">Головна</Link></li>
+                    <li><Link to="/blog">Блог</Link></li>
+                    <li><Link to="/specialists">Знайти терапевта</Link></li>
+
+                    {user && profile.role === 'SPECIALIST' && (
+                        <li><Link to="/createAppointment">Створити запис</Link></li>
+                    )}
+                    <li><Link to="/support">Підтримати проект</Link></li>
+                    <li><Link to="/aboutUs">Про нас</Link></li>
+                </ul>
+                {user && (
+                    <ul>
+                        <li><Link to="/profile">Мій профіль</Link></li>
+                        <li><Link to="/myAppointments">Мої прийоми</Link></li>
+                        <li><a onClick={handleLogout}>Вийти</a></li>
+                    </ul>
+                )}
+                {!user && window.location.pathname !== "/login" && (
+                    <li><Link to="/login">Увійти</Link></li>
+                )}
             </div>
-        </div>
+        </header>
     )
 }

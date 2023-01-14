@@ -1,4 +1,7 @@
 import "./footer.css"
+import YouTubeLogo from "./images/Youtube Logo.png"
+import TelegramLogo from "./images/telegram.png"
+import FacebookLogo from "./images/Facebook Logo.png";
 
 export default function Footer() {
     return (
@@ -16,17 +19,17 @@ export default function Footer() {
                 <ul className="nav footer-nav">
                     <li>
                         <a href="https://www.youtube.com" target="_blank">
-                            <img src="Images/YouTube Logo.png"/>
+                            <img src={YouTubeLogo}/>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.spotify.com" target="_blank">
-                            <img src="Images/Spotify Logo.png"/>
+                        <a href="https://web.telegram.org/" target="_blank">
+                            <img src={TelegramLogo}/>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.facebook.com" target="_blank">
-                            <img src="Images/Facebook Logo.png"/>
+                            <img src={FacebookLogo}/>
                         </a>
                     </li>
                 </ul>
