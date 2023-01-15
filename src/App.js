@@ -1,9 +1,9 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {
     BrowserRouter as Router,
     Routes,
     Route,
-    Link
+    Link, useLocation
 } from "react-router-dom";
 
 import TopBar from "./components/topbar/TopBar";
@@ -29,6 +29,21 @@ import AppointmentsBoardCreate from "./pages/appointmentsBoardCreate/Appointment
 axios.defaults.baseURL = 'http://localhost:8080';
 function App() {
     const {user} = useContext(Context);
+    const [profile, setProfile] = useState([])
+
+    useEffect(() => {
+        const fetchAppointments = async () => {
+            const res = await axios.get("/profile/" , {
+                headers: {
+                    'Authorization': 'Bearer ' + user.token
+                }
+            });
+            setProfile(res.data)
+        }
+        fetchAppointments()
+    }, [])
+    
+    
     return (
         <Router>
             <TopBar/>
@@ -45,8 +60,8 @@ function App() {
                 <Route path='/appointmentsBoard' element={user ? <AppointmentsBoard/> : <Login/>}/>
                 <Route path='/myAppointments' element={user ? <Appointments/> : <Login/>}/>
                 <Route path='/createAppointment' element={user ? <CreateAppointment/> : <Login/>}/>
-                <Route path='/appointmentsBoardCreate' element={user ? <AppointmentsBoardCreate/> : <Login/>}/>
-
+                <Route path='/appointmentsBoardCreate' element={user&& profile.role === 'SPECIALIST' ? <AppointmentsBoardCreate/> : <Home/>}/>
+              
             </Routes>
             <Footer/>
         </Router>

@@ -9,6 +9,7 @@ import {Context} from "../../context/Context";
 
 export default function AppointmentsBoardCreate() {
 
+    var startOfDay=new Date(new Date().setHours(2, 0, 0, 0)).getTime()
     return (
 
         <section className="container content-section">
@@ -35,41 +36,13 @@ export default function AppointmentsBoardCreate() {
                     <h1 className="day-header">Введіть час сеансу відповідного дня для його створення</h1>
 
                     <div className="appointment-day-create-details">
-                        <DayBoardCreate curDate={new Date(Date.now()).toLocaleDateString('uk-UA', {
-                            day: "numeric",
-                            month: "numeric",
-                            year: "numeric"
-                        })}/>
-                        <DayBoardCreate curDate={new Date(Date.now() + 86400000).toLocaleDateString('uk-UA', {
-                            day: "numeric",
-                            month: "numeric",
-                            year: "numeric"
-                        })}/>
-                        <DayBoardCreate curDate={new Date(Date.now() + 86400000 * 2).toLocaleDateString('uk-UA', {
-                            day: "numeric",
-                            month: "numeric",
-                            year: "numeric"
-                        })}/>
-                        <DayBoardCreate curDate={new Date(Date.now() + 86400000 * 3).toLocaleDateString('uk-UA', {
-                            day: "numeric",
-                            month: "numeric",
-                            year: "numeric"
-                        })}/>
-                        <DayBoardCreate curDate={new Date(Date.now() + 86400000 * 4).toLocaleDateString('uk-UA', {
-                            day: "numeric",
-                            month: "numeric",
-                            year: "numeric"
-                        })}/>
-                        <DayBoardCreate curDate={new Date(Date.now() + 86400000 * 5).toLocaleDateString('uk-UA', {
-                            day: "numeric",
-                            month: "numeric",
-                            year: "numeric"
-                        })}/>
-                        <DayBoardCreate curDate={new Date(Date.now() + 86400000 * 6).toLocaleDateString('uk-UA', {
-                            day: "numeric",
-                            month: "numeric",
-                            year: "numeric"
-                        })}/>
+                        <DayBoardCreate curDate={new Date(startOfDay)}/>
+                        <DayBoardCreate curDate={new Date(startOfDay + 86400000)}/>
+                        <DayBoardCreate curDate={new Date(startOfDay + 86400000 * 2)}/>
+                        <DayBoardCreate curDate={new Date(startOfDay + 86400000 * 3)}/>
+                        <DayBoardCreate curDate={new Date(startOfDay + 86400000 * 4)}/>
+                        <DayBoardCreate curDate={new Date(startOfDay + 86400000 * 5)}/>
+                        <DayBoardCreate curDate={new Date(startOfDay + 86400000 * 6)}/>
 
                     </div>
                 </div>
