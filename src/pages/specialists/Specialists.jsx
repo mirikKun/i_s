@@ -11,7 +11,6 @@ export default function Specialists() {
     const {search} = useLocation();
     const { user } = useContext(Context);
     useEffect(() => {
-        console.log('rofl')
         const fetchSpecialists = async () => {
             const res = await axios.get("/specialists/" + search);
             setSpecialists(res.data)

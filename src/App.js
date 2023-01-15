@@ -25,7 +25,8 @@ import Appointments from "./pages/appointments/Appointments";
 import Profile from "./pages/profile/Profile";
 import CreateAppointment from "./pages/createAppointment/CreateAppointment";
 import axios from "axios";
-axios.defaults.baseURL = 'http://backend:8080';
+import AppointmentsBoardCreate from "./pages/appointmentsBoardCreate/AppointmentsBoardCreate";
+axios.defaults.baseURL = 'http://localhost:8080';
 function App() {
     const {user} = useContext(Context);
     return (
@@ -39,11 +40,12 @@ function App() {
                 <Route path='/aboutUs' element={<AboutUs/>}/>
                 <Route path='/specialists' element={<Specialists/>}/>
                 <Route path='/support' element={<Support/>}/>
-                <Route path='/favoriteSpecialist' element={user ? <FavoriteSpecialists/> : <Home/>}/>
-                <Route path='/profile' element={user ? <Profile/> : <Home/>}/>
-                <Route path='/appointmentsBoard' element={user ? <AppointmentsBoard/> : <Home/>}/>
-                <Route path='/myAppointments' element={user ? <Appointments/> : <Home/>}/>
-                <Route path='/createAppointment' element={user ? <CreateAppointment/> : <Home/>}/>
+                <Route path='/favoriteSpecialist' element={user ? <FavoriteSpecialists/> : <Login/>}/>
+                <Route path='/profile' element={user ? <Profile/> : <Login/>}/>
+                <Route path='/appointmentsBoard' element={user ? <AppointmentsBoard/> : <Login/>}/>
+                <Route path='/myAppointments' element={user ? <Appointments/> : <Login/>}/>
+                <Route path='/createAppointment' element={user ? <CreateAppointment/> : <Login/>}/>
+                <Route path='/appointmentsBoardCreate' element={user ? <AppointmentsBoardCreate/> : <Login/>}/>
 
             </Routes>
             <Footer/>

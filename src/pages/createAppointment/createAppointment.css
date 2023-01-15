@@ -53,6 +53,12 @@ hr {
     width: 100%;
     opacity: 0.9;
 }
+.dateField {
+    padding: 16px 20px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 23px;
+}
 
 .registerbtn:hover {
     opacity: 1;

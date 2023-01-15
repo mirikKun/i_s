@@ -36,7 +36,10 @@ export default function TopBar() {
                     <li><Link to="/specialists">Знайти терапевта</Link></li>
 
                     {user && profile.role === 'SPECIALIST' && (
-                        <li><Link to="/createAppointment">Створити запис</Link></li>
+                        <ul>
+                            <li><Link to="/createAppointment">Створити запис</Link></li>
+                            <li><Link to="/appointmentsBoardCreate">Створити розклад</Link></li>
+                        </ul>
                     )}
                     <li><Link to="/support">Підтримати проект</Link></li>
                     <li><Link to="/aboutUs">Про нас</Link></li>

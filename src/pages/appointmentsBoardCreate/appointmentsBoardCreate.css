@@ -199,6 +199,7 @@ body {
     height: 30px;
 }
 
+
 .btn {
     text-align: center;
     vertical-align: middle;
@@ -337,32 +338,31 @@ body {
 }
 
 
-.spesialist-appointment {
+.spesialist-appointment-board {
     margin: 5px;
     width: 100%;
-    height: 620px;
+    height: 570px;
     border-radius: 25px;
     border: 4px solid #75663e;
 
 }
 
-.spesialist-details {
+.appointment-day-create-details {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 220px;
+    height: 400px;
 
 
 }
-
-.appointment-day {
-    display: flex;
+.appointment-day-create {
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: 65px;
     margin-left: -2px;
     margin-right: -2px;
     border: 4px solid #75663e;
-    height: 200px;
+    height: 400px;
     width: 220px;
 
 
@@ -382,10 +382,32 @@ body {
     text-align: center;
 }
 
+.time {
+    margin-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    display: block;
+
+
+}
+.day-times-holder{
+    margin-top: 8px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .day-time {
+    margin-top: 3px;
+
     color: rgb(255, 255, 255);
     font-size: 1.15em;
-
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 25px;
     border: 4px solid #75663e;
     text-align: center;
@@ -393,9 +415,26 @@ body {
     height: 34px;
     background-color: #b09b5f;
 }
+.day-time-create-btn {
+    margin-top: 3px;
+    color: #ffffff;
+    font-size: 1.15em;
+    font-weight: bold;
+
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    border-width: 0;
+    text-align: center;
+    width: 135px;
+    height: 34px;
+    background-color: #75663e;
+    display: block;
+}
 
 .central-image {
     display: block;
+
     margin: 140px auto;
 }
 

@@ -48,7 +48,7 @@ export default function CreateAppointment() {
                            placeholder="Введіть пошту" name="email" id="email" required/>
                     <label><b>Введіть час </b></label>
                     <br></br>
-                    <input type="datetime-local" onChange={event => setDateTime(event.target.value)} required/>
+                    <input type="datetime-local" className="dateField" onChange={event => setDateTime(event.target.value)} required/>
                     <hr/>
                     <button type="submit" disabled={isFetching} className="registerbtn">Створити запис</button>
                 </form>
